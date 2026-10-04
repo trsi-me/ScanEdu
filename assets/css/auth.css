@@ -1,0 +1,65 @@
+/* صفحات تسجيل الدخول والتسجيل */
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem clamp(18px, 5vw, 40px);
+    background: var(--bg);
+    box-sizing: border-box;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+}
+
+.auth-logo {
+    display: block;
+    margin: 0 auto 1.25rem auto;
+    max-height: 88px;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.auth-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+}
+
+.auth-sub {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 1.25rem;
+    font-size: 15px;
+    color: var(--text-secondary);
+}
+
+.auth-footer a {
+    font-weight: 700;
+}
+
+#student-fields {
+    display: none;
+}
+
+#student-fields.is-visible {
+    display: block;
+}

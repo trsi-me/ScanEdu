@@ -1,0 +1,11 @@
+/* صفحات الواجبات */
+
+.assign-submit textarea {
+    min-height: 200px;
+    resize: vertical;
+}
+
+.submissions-list {
+    max-height: 360px;
+    overflow: auto;
+}

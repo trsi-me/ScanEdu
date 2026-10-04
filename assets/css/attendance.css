@@ -1,0 +1,76 @@
+/* صفحة التحضير */
+
+.attendance-toolbar {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px 20px;
+    align-items: end;
+    margin-bottom: 24px;
+}
+
+.attendance-toolbar .form-group {
+    margin-bottom: 0;
+    min-width: 0;
+}
+
+.attendance-actions {
+    margin: 20px 0 24px;
+}
+
+.live-table {
+    margin-top: 8px;
+}
+
+.qr-modal-meta {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+.countdown-display {
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--primary);
+    margin-top: 8px;
+}
+
+.countdown-display.is-urgent {
+    color: var(--danger);
+}
+
+#qr-canvas-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 12px 0;
+}
+
+.live-table tbody tr.row-new {
+    opacity: 0;
+    animation: fadeInRow 0.4s ease forwards;
+}
+
+@keyframes fadeInRow {
+    to {
+        opacity: 1;
+    }
+}
+
+.scan-hero {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.scan-hero h1 {
+    margin-bottom: 0.5rem;
+}
+
+#qr-reader {
+    max-width: 500px;
+    margin: 1rem auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--surface);
+}

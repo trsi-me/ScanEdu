@@ -1,0 +1,340 @@
+/* الأنماط العامة والمتغيرات — ScanEdu */
+
+:root {
+    --page-max-width: 1320px;
+    --page-gutter: clamp(18px, 4vw, 44px);
+    --primary: #1565C0;
+    --primary-dark: #0D47A1;
+    --primary-light: #E3F2FD;
+    --secondary: #2E7D32;
+    --secondary-dark: #1B5E20;
+    --secondary-light: #E8F5E9;
+    --navy: #1B2A4A;
+    --white: #FFFFFF;
+    --bg: #F5F7FA;
+    --surface: #FFFFFF;
+    --border: #DDE3EC;
+    --text-primary: #1B2A4A;
+    --text-secondary: #4A5568;
+    --text-muted: #718096;
+    --danger: #C62828;
+    --warning: #E65100;
+    --success: #2E7D32;
+    --shadow-sm: 0 1px 3px rgba(27, 42, 74, 0.08);
+    --shadow-md: 0 4px 12px rgba(27, 42, 74, 0.12);
+    --radius: 10px;
+    --radius-btn: 8px;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url('../fonts/IBMPlexSansArabic/IBMPlexSansArabic-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url('../fonts/IBMPlexSansArabic/IBMPlexSansArabic-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url('../fonts/IBMPlexSansArabic/IBMPlexSansArabic-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url('../fonts/IBMPlexSansArabic/IBMPlexSansArabic-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+* {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-primary);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1, .h1-title {
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--navy);
+    margin: 0 0 0.75rem 0;
+}
+
+h2, .h2-title {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--navy);
+    margin: 0 0 0.5rem 0;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* روابط داخل الأزرار: لا تطبّق لون الرابط عند الهوفر لئلا يختفي النص على خلفية ملونة */
+a.btn {
+    text-decoration: none;
+}
+
+a.btn-primary,
+a.btn-primary:hover,
+a.btn-primary:focus {
+    color: var(--white);
+}
+
+a.btn-secondary,
+a.btn-secondary:hover,
+a.btn-secondary:focus {
+    color: var(--white);
+}
+
+a.btn-outline:hover,
+a.btn-outline:focus {
+    color: var(--primary-dark);
+}
+
+button.btn-primary:hover,
+button.btn-primary:focus,
+button.btn-secondary:hover,
+button.btn-secondary:focus {
+    color: var(--white);
+}
+
+button.btn-outline:hover,
+button.btn-outline:focus {
+    color: var(--primary-dark);
+    border-color: var(--primary);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: var(--radius-btn);
+    font-weight: 700;
+    font-size: 16px;
+    padding: 10px 24px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-dark);
+}
+
+.btn-outline {
+    background: var(--surface);
+    color: var(--primary);
+    border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+    background: var(--primary-light);
+}
+
+.btn-lg {
+    font-size: 18px;
+    padding: 14px 28px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.35rem;
+    font-size: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-btn);
+    font-size: 16px;
+    background: var(--surface);
+    color: var(--text-primary);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.alert {
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    font-size: 15px;
+    border: 1px solid var(--border);
+}
+
+.alert-success {
+    background: var(--secondary-light);
+    border-color: var(--secondary);
+    color: var(--secondary-dark);
+}
+
+.alert-danger {
+    background: #FFEBEE;
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+.alert-warning {
+    background: #FFF3E0;
+    border-color: var(--warning);
+    color: var(--warning);
+}
+
+.table-wrap {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+}
+
+table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+table.data-table th,
+table.data-table td {
+    padding: 12px 14px;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+}
+
+table.data-table th {
+    background: var(--primary-light);
+    color: var(--navy);
+    font-weight: 700;
+}
+
+table.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: var(--radius-btn);
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid var(--border);
+}
+
+.badge-success {
+    background: var(--secondary-light);
+    color: var(--secondary-dark);
+}
+
+.badge-muted {
+    background: var(--bg);
+    color: var(--text-muted);
+}
+
+.badge-danger {
+    background: #FFEBEE;
+    color: #C62828;
+    border-color: #FFCDD2;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(27, 42, 74, 0.45);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.modal-overlay.is-open {
+    display: flex;
+}
+
+.modal-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    max-width: 90vw;
+    box-shadow: var(--shadow-md);
+}
+
+.modal-close {
+    float: left;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-btn);
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.text-muted {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+/* بطاقات النماذج — تُستخدم في التحضير والواجبات وغيرها */
+.assign-form-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.assign-form-card .h2-title {
+    margin-top: 0;
+}
+
