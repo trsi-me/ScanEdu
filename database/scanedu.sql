@@ -145,7 +145,7 @@ CREATE TABLE exam_submissions (
 
 /* ------------------------------------------------------------------ */
 /* بيانات افتراضية شاملة للتجربة — احذف هذا القسم في الإنتاج إن رغبت    */
-/* كلمة المرور لجميع الحسابات أدناه: 12345678                          */
+/* كلمة المرور لجميع الحسابات أدناه:                           */
 /* أدمن: admin@scanedu.local                                          */
 /* دكتور: doctor@scanedu.local  |  doctor2@scanedu.local              */
 /* طالبان: student@scanedu.local  |  student2@scanedu.local           */
@@ -190,11 +190,11 @@ INSERT INTO terms (id, name, is_current, start_date, end_date) VALUES
 (2, 'خريف 2026', 0, '2026-09-01', '2026-12-20');
 
 INSERT INTO users (id, name, email, password, role, status, student_id, department, department_id) VALUES
-(1, 'مدير النظام', 'admin@scanedu.local', '$2y$10$U2Coq.wDegXSJOwM1PP6keswgbcgIrVSUhmLwxCITzhkFBPb5pKSa', 'admin', 'active', NULL, NULL, NULL),
-(2, 'د. أحمد محمد العتيبي', 'doctor@scanedu.local', '$2y$10$U2Coq.wDegXSJOwM1PP6keswgbcgIrVSUhmLwxCITzhkFBPb5pKSa', 'doctor', 'active', NULL, 'قسم علوم الحاسب والمعلومات', 1),
-(3, 'د. سارة خالد الشمري', 'doctor2@scanedu.local', '$2y$10$U2Coq.wDegXSJOwM1PP6keswgbcgIrVSUhmLwxCITzhkFBPb5pKSa', 'doctor', 'active', NULL, 'قسم علوم الحاسب والمعلومات', 1),
-(4, 'فاطمة عبدالله السالم', 'student@scanedu.local', '$2y$10$U2Coq.wDegXSJOwM1PP6keswgbcgIrVSUhmLwxCITzhkFBPb5pKSa', 'student', 'active', '441234567', 'قسم علوم الحاسب والمعلومات', 1),
-(5, 'خالد سعد القحطاني', 'student2@scanedu.local', '$2y$10$U2Coq.wDegXSJOwM1PP6keswgbcgIrVSUhmLwxCITzhkFBPb5pKSa', 'student', 'active', '441234568', 'قسم علوم الحاسب والمعلومات', 1);
+(1, 'مدير النظام', 'admin@scanedu.local', '', 'admin', 'active', NULL, NULL, NULL),
+(2, 'د. أحمد محمد العتيبي', 'doctor@scanedu.local', '', 'doctor', 'active', NULL, 'قسم علوم الحاسب والمعلومات', 1),
+(3, 'د. سارة خالد الشمري', 'doctor2@scanedu.local', '', 'doctor', 'active', NULL, 'قسم علوم الحاسب والمعلومات', 1),
+(4, 'فاطمة عبدالله السالم', 'student@scanedu.local', '', 'student', 'active', '441234567', 'قسم علوم الحاسب والمعلومات', 1),
+(5, 'خالد سعد القحطاني', 'student2@scanedu.local', '', 'student', 'active', '441234568', 'قسم علوم الحاسب والمعلومات', 1);
 
 INSERT INTO courses (id, name, code, doctor_id, semester, term_id) VALUES
 (1, 'مقدمة في أنظمة المعلومات', 'IS101', 2, 'ربيع 2026', 1),

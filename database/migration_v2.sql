@@ -50,12 +50,12 @@ INSERT IGNORE INTO terms (id, name, is_current, start_date, end_date) VALUES
 -- ربط المستخدمين الحاليين بالقسم
 UPDATE users SET department_id = 1 WHERE department_id IS NULL AND department LIKE '%حاسب%';
 
--- حساب أدمن (كلمة المرور: 12345678)
+-- حساب أدمن (كلمة المرور: )
 INSERT IGNORE INTO users (name, email, password, role, status, department_id) VALUES
-('مدير النظام', 'admin@scanedu.local', '$2y$10$U2Coq.wDegXSJOwM1PP6keswgbcgIrVSUhmLwxCITzhkFBPb5pKSa', 'admin', 'active', NULL);
+('مدير النظام', 'admin@scanedu.local', '', 'admin', 'active', NULL);
 
 -- دكتور ثانٍ للتجربة (زملاء القسم)
 INSERT IGNORE INTO users (name, email, password, role, status, department_id) VALUES
-('د. سارة خالد الشمري', 'doctor2@scanedu.local', '$2y$10$U2Coq.wDegXSJOwM1PP6keswgbcgIrVSUhmLwxCITzhkFBPb5pKSa', 'doctor', 'active', 1);
+('د. سارة خالد الشمري', 'doctor2@scanedu.local', '', 'doctor', 'active', 1);
 
 UPDATE courses SET term_id = 1 WHERE term_id IS NULL AND semester = 'ربيع 2026';
